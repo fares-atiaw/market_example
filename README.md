@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a simple example in an ecommerce app.
+This project is a simple example of an e-commerce app.
 It contains a screen of categories and a screen of products, plus different kinds of sorting.
 
 A few resources to get you started if this is your first Flutter project:
