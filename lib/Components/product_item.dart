@@ -12,6 +12,7 @@ class ProductItem extends StatelessWidget {
       elevation: 0,
       color: Colors.white,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Container(
             decoration: BoxDecoration(

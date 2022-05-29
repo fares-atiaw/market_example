@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:market_example/Components/category_item.dart';
 import 'package:market_example/Database/api_manager.dart';
 import 'package:market_example/models/categories_response.dart';
-
 import '../Screens/products.dart';
 
 class Tab_Categories extends StatefulWidget {

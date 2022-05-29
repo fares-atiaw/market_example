@@ -21,7 +21,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
   Widget build(BuildContext context) {
     var categoryID = ModalRoute.of(context)?.settings.arguments as String;
     products = API_Manager().getProducts(categoryID);
-    print('gg products => ${products.then((value) => value.data)}');
+    //print('gg products => ${products.then((value) => value.data)}');
 
     return Scaffold(
       appBar: AppBar(
@@ -95,14 +95,24 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                                 onRefresh: refreshing,
                                 child: Container(
                                   margin: EdgeInsets.all(8),
-                                  child: GridView.builder(
-                                    itemBuilder:(context, index) => ProductItem(data: lista[index]),
-                                    itemCount: lista.length,
-                                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                        crossAxisCount: 2,
-                                        mainAxisSpacing: 40,
-                                        crossAxisSpacing: 5,childAspectRatio: 6/10)
-                                    ,),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Expanded(
+                                        child: GridView.builder(
+                                          itemBuilder:(context, index) => ProductItem(data: lista[index]),
+                                          itemCount: lista.length,
+                                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                              crossAxisCount: 2,
+                                              mainAxisSpacing: 5,
+                                              crossAxisSpacing: 5,
+                                              childAspectRatio: 7/10
+                                              //(MediaQuery.of(context).size.width * 0.15) / (MediaQuery.of(context).size.height * 0.1)
+                                          )
+                                          ,),
+                                      ),
+                                    ],
+                                  ),
                                 )
                             )
                         );
